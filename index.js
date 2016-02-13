@@ -5,7 +5,6 @@ var program = require('commander');
 var chalk = require('chalk');
 var path = require('path');
 var fs = require('fs-extra');
-var mkdirp = require('mkdirp');
 
 program
   .option('-t, --type <app>', 'The application type to install')
