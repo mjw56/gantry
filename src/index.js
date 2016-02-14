@@ -10,10 +10,7 @@ program
   .parse(process.argv);
 
 if (program.type) {
-
-  if (!program.type) {
-    process.exit(0);
-  }
-
   questions(program.type);
+} else {
+  process.exit(0);
 }
