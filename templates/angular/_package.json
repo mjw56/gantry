@@ -10,7 +10,7 @@
   "keywords": [
     "angular"
   ],
-  "author": "Mike Wilcox <mwilcox56@gmail.com> (http://github.com/mjw56)",
+  "author": "{{maintainer}} <{{email}}>",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.5.0"
