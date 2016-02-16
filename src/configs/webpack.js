@@ -1,7 +1,8 @@
 const config = {
   webpack: {
     webpack: 'webpack',
-    webpackDevServer: 'webpack-dev-server'
+    webpackDevServer: 'webpack-dev-server',
+    webpackHotMiddleware: 'webpack-hot-middleware'
   },
   angular: {
     dependencies: {
@@ -30,7 +31,7 @@ const config = {
         babelLoader: 'babel-loader',
         babelPluginReactTransform: 'babel-plugin-react-transform',
         babelPresetEs2015: 'babel-preset-es2015',
-        babelPresetReact: 'babel-preset-es2015',
+        babelPresetReact: 'babel-preset-react',
         babelPresetReactHmre: 'babel-preset-react-hmre'
       },
       typescript: {
