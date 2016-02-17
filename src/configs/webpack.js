@@ -8,7 +8,8 @@ const config = {
     command: 'webpack'
   },
   angular: {
-    dependencies: {
+    dependencies: {},
+    devDependencies: {
       babel: {
         babelCore: 'babel-core',
         babelLoader: 'babel-loader'
@@ -48,7 +49,8 @@ const config = {
     }
   },
   angular2: {
-    dependencies: {
+    dependencies: {},
+    devDependencies: {
       babel: {
         babelCore: 'babel-core',
         babelLoader: 'babel-loader'
