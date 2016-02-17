@@ -9,9 +9,7 @@ const config = {
   },
   devDependencies: {
     concurrently: 'concurrently',
-    liteServer: 'lite-server',
-    typescript: 'typescript',
-    typings: 'typings'
+    liteServer: 'lite-server'
   }
 }
 
