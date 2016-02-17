@@ -3,7 +3,6 @@
 # Running the app
 
 ```bash
-$ npm install
 $ npm run typings && npm run start
 ```
 
