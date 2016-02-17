@@ -25,8 +25,8 @@ const install = function install(type, answers) {
     } = require(`./configs/${type}.js`).default;
 
     objectAssign(
-      dependencies, 
-      moduleBundler[type].dependencies[answers.transpiler.toLowerCase()],
+      devDependencies, 
+      moduleBundler[type].devDependencies[answers.transpiler.toLowerCase()],
       moduleBundler[answers.moduleBundler.toLowerCase()]
     );
 
@@ -57,7 +57,9 @@ function npmInstall(deps, type) {
     chalk.green.underline.bold(`\ninstalling ${type}....`)
   );
 
-  exec(`npm install ${deps} --save-dev`,
+  const save = (type === 'dependencies') ? '--save' : '--save-dev';
+
+  exec(`npm install ${deps} ${save}`,
     (error, stdout, stderr) => {
       console.log(`stdout: ${stdout}`);
       console.log(`stderr: ${stderr}`);
