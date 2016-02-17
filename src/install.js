@@ -4,7 +4,7 @@ import objectAssign from 'object-assign';
 import { Promise } from 'es6-promise';
 const exec = require('child_process').exec;
 
-const install = function(type, answers) {
+const install = function install(type, answers) {
   const moduleBundler = require(`./configs/${answers.moduleBundler.toLowerCase()}`).default;
   const transpiler = answers.transpiler.toLowerCase();
 
