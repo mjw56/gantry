@@ -1,6 +1,6 @@
 # gantry
 
-> _A prototype initialization tool_
+> _A prototype scaffolding tool_
 
 # TODO
 
