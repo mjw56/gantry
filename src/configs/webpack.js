@@ -4,23 +4,86 @@ const config = {
     webpackDevServer: 'webpack-dev-server',
     webpackHotMiddleware: 'webpack-hot-middleware'
   },
+  build: {
+    command: 'webpack'
+  },
   angular: {
     dependencies: {
       babel: {
-
+        babelCore: 'babel-core',
+        babelLoader: 'babel-loader'
       }, 
       typescript: {
-        
+        typescript: 'typescript',
+        typings: 'typings'
+      }
+    },
+    config: {
+      babel: {
+        resolve: {
+          extensions: ['', '.webpack.js', '.web.js', '.js']
+        },
+        loaders: [
+          {
+            test: /\.js$/,
+            loaders: [ 'babel' ],
+            exclude: /node_modules/,
+            include: __dirname
+          }
+        ]
+      },
+      typescript: {
+        resolve: {
+          extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
+        },
+        loaders: [
+          { 
+            test: /\.tsx?$/, 
+            loader: 'ts-loader',
+            exclude: /node_modules/,
+            include: __dirname 
+          }
+        ]
       }
     }
   },
   angular2: {
     dependencies: {
       babel: {
-
+        babelCore: 'babel-core',
+        babelLoader: 'babel-loader'
       },
       typescript: {
-
+        typescript: 'typescript',
+        typings: 'typings'
+      }
+    },
+    config: {
+      babel: {
+        resolve: {
+          extensions: ['', '.webpack.js', '.web.js', '.js']
+        },
+        loaders: [
+          {
+            test: /\.js$/,
+            loaders: [ 'babel' ],
+            exclude: /node_modules/,
+            include: __dirname
+          }
+        ]
+      },
+      typescript: {
+        resolve: {
+          extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
+        },
+        loaders: [
+          { 
+            test: /\.tsx?$/, 
+            loader: 'ts-loader',
+            exclude: /node_modules/,
+            include: __dirname 
+          }
+        ]
       }
     }
   },
