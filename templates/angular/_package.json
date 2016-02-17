@@ -11,15 +11,5 @@
     "angular"
   ],
   "author": "{{maintainer}} <{{email}}>",
-  "license": "MIT",
-  "dependencies": {
-    "angular": "^1.5.0"
-  },
-  "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-preset-es2015": "^6.5.0",
-    "babelify": "^7.2.0",
-    "browserify": "^13.0.0",
-    "lite-server": "^2.0.1"
-  }
+  "license": "MIT"
 }
