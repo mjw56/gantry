@@ -90,7 +90,8 @@ const config = {
     }
   },
   react: {
-    dependencies: {
+    dependencies: {},
+    devDependencies: {
       babel: {
         babelCore: 'babel-core',
         babelLoader: 'babel-loader',
