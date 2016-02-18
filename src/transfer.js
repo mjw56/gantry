@@ -21,7 +21,7 @@ var transfer = function transfer(config, vars) {
       path.join(path.resolve(__dirname), ...opts),
       path.resolve('.'),
       vars,
-      function (err, createdFiles) {
+      function copy(err, createdFiles) {
         if (err) {
           reject(err);
         }
