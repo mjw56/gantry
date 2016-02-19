@@ -1,34 +1,16 @@
 import { transfer } from './transfer';
 import chalk from 'chalk';
-import objectAssign from 'object-assign';
 import { Promise } from 'es6-promise';
 const exec = require('child_process').exec;
 
 const install = function install(type, answers) {
-  const moduleBundler = require(`./configs/${answers.moduleBundler.toLowerCase()}`).default;
-  const transpiler = answers.transpiler.toLowerCase();
-
   Promise.all([
     transfer({ folder: 'project', library: type }, answers),
-    transfer(
-      { 
-        folder: 'config', 
-        library: type, 
-        bundler: answers.moduleBundler 
-      }, 
-      moduleBundler[type].config[transpiler]
-    )
   ]).then((res) => {
     const { 
       dependencies = {}, 
       devDependencies = {} 
     } = require(`./configs/${type}.js`).default;
-
-    objectAssign(
-      devDependencies, 
-      moduleBundler[type].devDependencies[answers.transpiler.toLowerCase()],
-      moduleBundler[answers.moduleBundler.toLowerCase()]
-    );
 
     const depsStr = constructDeps(dependencies);
     const devDepsStr = constructDeps(devDependencies);
