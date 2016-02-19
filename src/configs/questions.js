@@ -33,16 +33,6 @@ const config = {
       angular: [
         {
           type: "list",
-          name: "moduleBundler",
-          message: "Which module bundler would you like to use?",
-          choices: [
-            "Browserify",
-            "SystemJS",
-            "Webpack"
-          ]
-        },
-        {
-          type: "list",
           name: "transpiler",
           message: "Which transpiler would you like to use?",
           choices: [
@@ -60,16 +50,6 @@ const config = {
       angular2: [
         {
           type: "list",
-          name: "moduleBundler",
-          message: "Which module bundler would you like to use?",
-          choices: [
-            "Browserify",
-            "SystemJS",
-            "Webpack"
-          ]
-        },
-        {
-          type: "list",
           name: "transpiler",
           message: "Which transpiler would you like to use?",
           choices: [
@@ -85,16 +65,6 @@ const config = {
         }
       ],
       react: [
-        {
-          type: "list",
-          name: "moduleBundler",
-          message: "Which module bundler would you like to use?",
-          choices: [
-            "Browserify",
-            "SystemJS",
-            "Webpack"
-          ]
-        },
         {
           type: "list",
           name: "transpiler",
