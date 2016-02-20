@@ -7,41 +7,17 @@ const install = function install(type, answers) {
   Promise.all([
     transfer({ folder: 'project', library: type }, answers),
   ]).then((res) => {
-    const { 
-      dependencies = {}, 
-      devDependencies = {} 
-    } = require(`./configs/${type}.js`).default;
-
-    const depsStr = constructDeps(dependencies);
-    const devDepsStr = constructDeps(devDependencies);
-
-    if (depsStr) {
-      npmInstall(depsStr, 'dependencies');
-    }
-
-    if (devDepsStr) {
-      npmInstall(devDepsStr, 'devDependencies');
-    }
+    npmInstall();
   })
   .catch((err) => console.log(err));
 }
 
-function constructDeps(deps) {
-  let depsStr = '';
-  Object.keys(deps).forEach((key) => {
-    depsStr += deps[key] + ' ';
-  });
-  return depsStr;
-}
-
-function npmInstall(deps, type) {
+function npmInstall() {
   console.log(
-    chalk.green.underline.bold(`\ninstalling ${type}....`)
+    chalk.green.underline.bold(`\ninstalling node modules...`)
   );
 
-  const save = (type === 'dependencies') ? '--save' : '--save-dev';
-
-  exec(`npm install ${deps} ${save}`,
+  exec(`npm install`,
     (error, stdout, stderr) => {
       console.log(`stdout: ${stdout}`);
       console.log(`stderr: ${stderr}`);
