@@ -1,11 +1,11 @@
 import { transfer } from './transfer';
 import chalk from 'chalk';
 import { Promise } from 'es6-promise';
-const exec = require('child_process').exec;
+const spawn = require('child_process').spawn;
 
-const install = function install(type, answers) {
+const install = function install(answers) {
   Promise.all([
-    transfer({ folder: 'project', library: type }, answers),
+    transfer(answers),
   ]).then((res) => {
     npmInstall();
   })
@@ -17,15 +17,7 @@ function npmInstall() {
     chalk.green.underline.bold(`\ninstalling node modules...`)
   );
 
-  exec(`npm install`,
-    (error, stdout, stderr) => {
-      console.log(`stdout: ${stdout}`);
-      console.log(`stderr: ${stderr}`);
-      if (error !== null) {
-        console.log(`exec error: ${error}`);
-      }
-    }
-  );
+  spawn(`npm`, ['install'], {});
 }
 
 export { install };
