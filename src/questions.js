@@ -2,11 +2,10 @@ import inquirer from 'inquirer';
 import { install } from './install';
 import config from './configs/questions';
 
-const questions = function questions(type) {
-  // TODO: these questions should be based on type
+const questions = function questions() {
   inquirer.prompt(
-    config.app.concat(config.tools[type]), 
-    install.bind(this, type)
+    config.app, 
+    install.bind(this)
   );
 }
 
