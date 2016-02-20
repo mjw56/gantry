@@ -2,18 +2,18 @@ import copy from 'copy-template-dir';
 import path from 'path';
 import { Promise } from 'es6-promise';
 
-var transfer = function transfer(config, vars) {
+var transfer = function transfer(config) {
   return new Promise((resolve, reject) => {
     const {
-      library
+      app
     } = config;
 
-    const opts = ['../', 'templates', library];
+    const opts = ['../', 'templates', app];
 
     copy(
       path.join(path.resolve(__dirname), ...opts),
       path.resolve('.'),
-      vars,
+      config,
       function copy(err, createdFiles) {
         if (err) {
           reject(err);
