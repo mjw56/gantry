@@ -1,7 +1,7 @@
 import { transfer } from './transfer';
 import chalk from 'chalk';
 import { Promise } from 'es6-promise';
-const spawn = require('child_process').spawn;
+const spawn = require('cross-spawn');
 
 const install = function install(answers) {
   Promise.all([
@@ -17,7 +17,9 @@ function npmInstall() {
     chalk.green.underline.bold(`\ninstalling node modules...`)
   );
 
-  spawn(`npm`, ['install'], {});
+  const output = spawn.sync(`npm`, ['install'], { stdio: "inherit" });
+
+  console.log(output);
 }
 
 export { install };

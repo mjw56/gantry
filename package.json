@@ -24,6 +24,7 @@
     "co-prompt": "^1.0.0",
     "commander": "^2.9.0",
     "copy-template-dir": "^1.2.0",
+    "cross-spawn": "^2.1.5",
     "es6-promise": "^3.1.2",
     "fs-extra": "^0.26.5",
     "inquirer": "^0.12.0",
