@@ -8,11 +8,6 @@ import blessed from 'blessed';
 import contrib from 'blessed-contrib';
 
 program
-  .option('-t, --type <app>', 'The application type to install')
   .parse(process.argv);
 
-if (program.type) {
-  questions(program.type);
-} else {
-  process.exit(0);
-}
+questions();
