@@ -1,0 +1,25 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run typings && browserify src/App.ts -o bundle.js -t [ tsify ]",
+    "start": "lite-server",
+    "typings": "typings install"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "{{maintainer}} <{{email}}>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.0"
+  },
+  "devDependencies": {
+    "tsify": "^0.13.2",
+    "browserify": "^13.0.0",
+    "lite-server": "^2.1.0",
+    "typings": "^0.6.8"
+  }
+}
