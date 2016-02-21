@@ -1,13 +1,13 @@
-export default function apiMiddleware(client) {
-  return () => next => action => {
+export default function apiMiddleware() {
+  return next => action => {
     if (!action) return next(action);
 
-    const { request, url, types, ...rest } = action;
+    const { request, url, type, ...rest } = action;
 
     if (!request) return next(action);
 
-    const promise = client.get(url);
+    const promise = fetch(url);
 
-    return next({ promise: promise, types });
+    return next({ promise: promise, type });
   };
 }
