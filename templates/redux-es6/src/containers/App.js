@@ -12,21 +12,20 @@ import {
 } from '../components/index';
 
 class App extends ImmutableComponent {
-  socket;
-
+  
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    // fetch planets from server
+    this.props.actions.fetchPlanets('/planets');
   }
 
   render() {
     const { planets } = this.props;
     return (
       <div>
-        <PlanetList planets={planets} />
+        <PlanetList planets={planets.get('planets')} />
         <DevTools />
       </div>
     );
@@ -34,7 +33,7 @@ class App extends ImmutableComponent {
 }
 
 App.propTypes = {
-  planets: List
+  planets: Map
 };
 
 const mapStateToProps = (state) => {
