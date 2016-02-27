@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "babel src --loose all --out-dir lib",
+    "lint": "eslint src",
     "test": "mocha --compilers js:babel-core/register tests/*.js"
   },
   "author": "Mike Wilcox <mwilcox56@gmail.com> (http://github.com/mjw56)",
@@ -32,6 +33,7 @@
     "object-assign": "^4.0.1"
   },
   "devDependencies": {
+    "eslint-config-mikewilcox": "^1.2.0",
     "expect": "^1.14.0",
     "mocha": "^2.4.5",
     "systemjs": "^0.19.20"
