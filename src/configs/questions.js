@@ -37,7 +37,8 @@ const config = {
         'angular-typescript',
         'angular2',
         'react',
-        'redux-es5'
+        'redux-es5',
+        'redux-es6'
       ]
     },
     {
