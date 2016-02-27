@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as PlanetActions from '../actions/planets';
-import io from 'socket.io-client';
 import DevTools from './DevTools';
 import { List } from 'immutable-props';
 import { createSelector } from 'reselect';
