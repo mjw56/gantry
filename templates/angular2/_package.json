@@ -4,10 +4,11 @@
   "description": "{{description}}",
   "main": "index.js",
   "scripts": {
+    "build": "npm run typings",
     "tsc": "tsc",
     "tsc:w": "tsc --watch",
     "serve": "lite-server",
-    "start": "concurrent \"npm run tsc:w\" \"npm run serve\" ",
+    "start": "npm run build && concurrent \"npm run tsc:w\" \"npm run serve\" ",
     "typings": "typings install"
   },
   "keywords": [
