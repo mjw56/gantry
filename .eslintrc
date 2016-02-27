@@ -1,0 +1,6 @@
+{
+  "extends": "mikewilcox",
+  "rules": {
+    "no-undef": 0
+  }
+}
