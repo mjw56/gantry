@@ -1,43 +1,43 @@
 const config = {
   app: [
     {
-      when: function(name){ return name; },
+      when: function name(n) { return n; },
       type: 'input',
       name: 'name',
       message: 'Would you like to name your app?',
       default: 'prototype'
     },
     {
-      when: function(description){ return description; },
+      when: function description(d) { return d; },
       type: 'input',
       name: 'description',
       message: 'What is the description of the app?',
       default: 'A new prototype'
     },
     {
-      when: function(maintainer){ return maintainer; },
+      when: function maintainer(m) { return m; },
       type: 'input',
       name: 'maintainer',
       message: 'What is the name of the maintainer?',
       default: 'webdev'
     },
     {
-      when: function(email){ return email; },
+      when: function email(e) { return e; },
       type: 'input',
       name: 'email',
       message: 'What is the email of the maintainer?',
       default: 'webdev@code.life'
     },
     {
-      type: "list",
-      name: "app",
-      message: "What type of app would you like to create?",
+      type: 'list',
+      name: 'app',
+      message: 'What type of app would you like to create?',
       choices: [
-        "angular-es6",
-        "angular-typescript",
-        "angular2",
-        "react",
-        "redux-es5"
+        'angular-es6',
+        'angular-typescript',
+        'angular2',
+        'react',
+        'redux-es5'
       ]
     },
     {
@@ -47,6 +47,6 @@ const config = {
       default: true
     }
   ]
-}
+};
 
 export default config;

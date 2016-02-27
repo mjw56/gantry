@@ -4,9 +4,9 @@ import config from './configs/questions';
 
 const questions = function questions() {
   inquirer.prompt(
-    config.app, 
+    config.app,
     install.bind(this)
   );
-}
+};
 
 export { questions };

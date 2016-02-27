@@ -2,7 +2,7 @@ import copy from 'copy-template-dir';
 import path from 'path';
 import { Promise } from 'es6-promise';
 
-var transfer = function transfer(config) {
+const transfer = function transfer(config) {
   return new Promise((resolve, reject) => {
     const {
       app
@@ -14,7 +14,7 @@ var transfer = function transfer(config) {
       path.join(path.resolve(__dirname), ...opts),
       path.resolve('.'),
       config,
-      function copy(err, createdFiles) {
+      (err, createdFiles) => {
         if (err) {
           reject(err);
         }
@@ -22,6 +22,6 @@ var transfer = function transfer(config) {
       }
     );
   });
-}
+};
 
 export { transfer };
