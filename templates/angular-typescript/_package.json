@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run typings && browserify src/App.ts -o bundle.js -t [ tsify ]",
-    "start": "lite-server",
+    "start": "npm run build && lite-server",
     "typings": "typings install"
   },
   "keywords": [
